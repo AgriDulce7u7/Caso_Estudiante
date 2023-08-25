@@ -36,13 +36,13 @@ public class Main {
         estudiante03.setGrades03(4.5);
 
         // Calcular definitiva de los estudiantes
-        calcularDefinitivaEstudiante(estudiante01, estudiante02, estudiante03);
+        calcularDefinitivaEstudiante(estudiante01);
 
     }
 
-    public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
+    public static void calcularDefinitivaEstudiante(Estudiante estudiante01) {
         double calcularDefinitivaEstudiante = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
-        return;
+        System.out.println("El promedio de un estudiante es:" +calcularDefinitivaEstudiante);
 
     }
 }
