@@ -5,7 +5,6 @@ import co.edu.uniquindio.estudiante.Model.Estudiante;
 public class Main {
     public static void main(String[] args) {
         crearEstudiante();
-
     }
     private static void crearEstudiante (){
         Estudiante estudiante01 = new Estudiante();
@@ -43,6 +42,31 @@ public class Main {
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01) {
         double calcularDefinitivaEstudiante = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
         System.out.println("El promedio de un estudiante es:" +calcularDefinitivaEstudiante);
+
+
+        calcularDefinitivaEstudiante();
+    }
+    private static void calcularDefinitivaEstudiante(){
+        String nombre01 = "Jose";
+        double grade01estudiante01 = 3;
+        double grade02estudiante01 = 3.5;
+        double grade03estudiante01 = 4.5;
+        double definitiva01 = (grade01estudiante01 + grade02estudiante01 + grade03estudiante01) / 3;
+        System.out.println("La definitiva del estudiante "+nombre01+ " es: "+definitiva01);
+
+        String nombre02 = "María";
+        double grade01estudiante02 = 2;
+        double grade02estudiante02 = 2.5;
+        double grade03estudiante02 = 4.5;
+        double definitiva02 = (grade01estudiante02 + grade02estudiante02 + grade03estudiante02) / 3;
+        System.out.println("La definitiva del estudiante "+nombre02+ " es: "+definitiva02);
+
+        String nombre03 = "Pepe";
+        double grade01estudiante03 = 4;
+        double grade02estudiante03 = 2.5;
+        double grade03estudiante03 = 4.5;
+        double definitiva03 = (grade01estudiante03 + grade02estudiante03 + grade03estudiante03) / 3;
+        System.out.println("La definitiva del estudiante "+nombre03+ " es: "+definitiva03);
 
     }
 }
