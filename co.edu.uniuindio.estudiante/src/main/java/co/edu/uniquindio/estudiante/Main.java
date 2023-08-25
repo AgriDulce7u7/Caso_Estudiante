@@ -35,13 +35,27 @@ public class Main {
         estudiante03.setGrades03(4.5);
 
         // Calcular definitiva de los estudiantes
-        calcularDefinitivaEstudiante(estudiante01);
+        calcularDefinitivaEstudiante(estudiante01, estudiante02, estudiante03);
 
     }
 
-    public static void calcularDefinitivaEstudiante(Estudiante estudiante01) {
-        double calcularDefinitivaEstudiante = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
-        System.out.println("El promedio de un estudiante es:" +calcularDefinitivaEstudiante);
+    public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
+        double definitivaEstudiante01 = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
+        System.out.println("El promedio de la estudiante María es:" +definitivaEstudiante01);
+
+        double definitivaEstudiante02 = (estudiante02.getGrades01() + estudiante02.getGrades02() + estudiante02.getGrades03()) / 3;
+        System.out.println("El promedio del estudiante Juan es:" + definitivaEstudiante02);
+
+        double definitivaEstudiante03 = (estudiante03.getGrades01() + estudiante03.getGrades02() + estudiante03.getGrades03()) / 3;
+        System.out.println("El promedio de la estudiante Pepita es:" + definitivaEstudiante03);
+
+        //Calcular el promedio del curso
+        calcularPromedioCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
     }
-    
+
+    public static void calcularPromedioCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+        double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
+        System.out.println("El promedio del curso es:" + promedioCurso);
+    }
+
 }
