@@ -51,7 +51,6 @@ public class Main {
         //Calcular el promedio del curso
         calcularPromedioCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
     }
-
     public static void calcularPromedioCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
         System.out.println("El promedio del curso es: " + promedioCurso);
