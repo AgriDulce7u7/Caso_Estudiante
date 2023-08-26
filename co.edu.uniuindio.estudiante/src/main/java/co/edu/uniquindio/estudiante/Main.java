@@ -6,7 +6,8 @@ public class Main {
     public static void main(String[] args) {
         crearEstudiante();
     }
-    private static void crearEstudiante (){
+
+    private static void crearEstudiante() {
         Estudiante estudiante01 = new Estudiante();
         estudiante01.setName("José");
         estudiante01.setAge(17);
@@ -41,9 +42,10 @@ public class Main {
         // Calcular promedio de la nota 1 de los tres estudiantes
         calcularPromedioNota1(estudiante01, estudiante02, estudiante03);
     }
+
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         double definitivaEstudiante01 = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
-        System.out.println("El promedio del estudiante José es: " +definitivaEstudiante01);
+        System.out.println("El promedio del estudiante José es: " + definitivaEstudiante01);
 
         double definitivaEstudiante02 = (estudiante02.getGrades01() + estudiante02.getGrades02() + estudiante02.getGrades03()) / 3;
         System.out.println("El promedio de la estudiante María es: " + definitivaEstudiante02);
@@ -59,24 +61,30 @@ public class Main {
         // Calcular la nota más baja
         double notaMasBaja = calcularNotaMenorCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
         System.out.println("La definitiva más baja del curso es: " + notaMasBaja);
+        // Determinar  si el estudiante gana o no el curso
+        aprobacionCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
     }
+
     public static void calcularPromedioCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
         System.out.println("El promedio del curso es: " + promedioCurso);
     }
-    private static void calcularPromedioEdad(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
+
+    private static void calcularPromedioEdad(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         int promedioEdad = (estudiante01.getAge() + estudiante02.getAge() + estudiante03.getAge()) / 3;
-        System.out.println("El promedio de edad del curso es de: "+promedioEdad);
+        System.out.println("El promedio de edad del curso es de: " + promedioEdad);
     }
-    private static void calcularPromedioNota1(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
+
+    private static void calcularPromedioNota1(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         double promedioNotaUno = (estudiante01.getGrades01() + estudiante02.getGrades01() + estudiante03.getGrades01()) / 3;
-        System.out.println("El promedio de la primer nota del curso es de: "+promedioNotaUno);
+        System.out.println("El promedio de la primer nota del curso es de: " + promedioNotaUno);
     }
+
     public static double calcularNotaMayorDelCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double maxDefinitiva = 0.0;
 
         if (definitivaEstudiante01 > maxDefinitiva) {
-                maxDefinitiva = definitivaEstudiante01;
+            maxDefinitiva = definitivaEstudiante01;
         }
         if (definitivaEstudiante02 > maxDefinitiva) {
             maxDefinitiva = definitivaEstudiante02;
@@ -86,6 +94,7 @@ public class Main {
         }
         return maxDefinitiva;
     }
+
     public static double calcularNotaMenorCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double minDefinitiva = 0.0;
 
@@ -99,5 +108,24 @@ public class Main {
             minDefinitiva = definitivaEstudiante03;
         }
         return minDefinitiva;
+    }
+
+    private static void aprobacionCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+        double notaMinima = 3.0;
+        if (definitivaEstudiante01 >= notaMinima){
+            System.out.println("El estudiante José gana la materia.");
+        }else{
+            System.out.println("El estudiante José no ganó la materia.");
+        }
+        if (definitivaEstudiante02 >= notaMinima){
+            System.out.println("La estudiante María gana la materia.");
+        }else{
+            System.out.println("La estudiante María no ganó la materia.");
+        }
+        if (definitivaEstudiante03 >= notaMinima){
+            System.out.println("El estudiante Pepe gana la materia.");
+        }else{
+            System.out.println("El estudiante Pepe no ganó la materia.");
+        }
     }
 }
