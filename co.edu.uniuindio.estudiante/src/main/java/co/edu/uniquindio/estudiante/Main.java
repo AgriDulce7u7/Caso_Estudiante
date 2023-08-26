@@ -36,6 +36,8 @@ public class Main {
 
         // Calcular definitiva de los estudiantes
         calcularDefinitivaEstudiante(estudiante01, estudiante02, estudiante03);
+        // Calcular el promedio de edades
+        calcularPromedioEdad(estudiante01, estudiante02, estudiante03);
 
     }
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
@@ -55,5 +57,8 @@ public class Main {
         double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
         System.out.println("El promedio del curso es: " + promedioCurso);
     }
-
+    private static void calcularPromedioEdad(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
+        int promedioEdad = (estudiante01.getAge() + estudiante02.getAge() + estudiante03.getAge()) / 3;
+        System.out.println("El promedio de edad del curso es de: "+promedioEdad);
+    }
 }
