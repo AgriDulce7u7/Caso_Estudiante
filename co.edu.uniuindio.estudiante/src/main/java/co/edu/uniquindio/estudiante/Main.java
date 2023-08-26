@@ -112,20 +112,42 @@ public class Main {
 
     private static void aprobacionCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double notaMinima = 3.0;
+        double calcularEstudiantesReprobados = 0.0;
+        double calcularEstudiantesAprobados = 0.0;
         if (definitivaEstudiante01 >= notaMinima){
             System.out.println("El estudiante José gana la materia.");
+            calcularEstudiantesAprobados += 1;
         }else{
             System.out.println("El estudiante José no ganó la materia.");
+            calcularEstudiantesReprobados += 1;
         }
         if (definitivaEstudiante02 >= notaMinima){
             System.out.println("La estudiante María gana la materia.");
+            calcularEstudiantesAprobados += 1;
         }else{
             System.out.println("La estudiante María no ganó la materia.");
+            calcularEstudiantesReprobados += 1;
         }
         if (definitivaEstudiante03 >= notaMinima){
             System.out.println("El estudiante Pepe gana la materia.");
+            calcularEstudiantesAprobados += 1;
         }else{
             System.out.println("El estudiante Pepe no ganó la materia.");
+            calcularEstudiantesReprobados += 1;
         }
+        // Porcentaje de estudiantes que aprobaron el curso
+        calcularPorcentajePerdieronCurso(calcularEstudiantesReprobados);
+        calcularPorcentajeGanaronCurso(calcularEstudiantesAprobados);
     }
+
+    private static void calcularPorcentajeGanaronCurso(double calcularEstudiantesAprobados) {
+        double ganaron = (calcularEstudiantesAprobados * 100) / 3;
+        System.out.println("El porcentaje de estudiantes que aprobaron es: " + ganaron+"%");
+    }
+
+    private static void calcularPorcentajePerdieronCurso(double calcularEstudiantesReprobados) {
+        double perdieron = (calcularEstudiantesReprobados * 100) / 3;
+        System.out.println("El porcentaje de estudiantes que reprobaron es: " + perdieron+"%");
+    }
+
 }
