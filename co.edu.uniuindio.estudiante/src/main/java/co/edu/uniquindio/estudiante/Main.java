@@ -49,6 +49,8 @@ public class Main {
         // Calcular la nota más baja
         double notaMasBaja = calcularNotaMenorCurso(estudiante01, estudiante02, estudiante03);
         System.out.println("La nota más baja del curso es: " + notaMasBaja);
+        // Obtener la nota máxima de cada estudiante
+        notaMaxima(estudiante01, estudiante02, estudiante03);
     }
 
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
@@ -208,6 +210,41 @@ public class Main {
             System.out.println("Todas las notas de "+nombre03+" no son mayores o iguales a cuatro.");
         }
     }
+    private static void notaMaxima(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
+        double notaMaxima01 = 0.0;
+        double notaMaxima02 = 0.0;
+        double notaMaxima03 = 0.0;
 
+        if (estudiante01.getGrades01() > notaMaxima01) {
+            notaMaxima01 = estudiante01.getGrades01();
+        }
+        if (estudiante01.getGrades02() > notaMaxima01) {
+            notaMaxima01 = estudiante01.getGrades02();
+        }
+        if (estudiante01.getGrades03() > notaMaxima01) {
+            notaMaxima01 = estudiante01.getGrades03();
+        }
+        System.out.println("La nota máxima de José es:" + notaMaxima01);
 
+        if (estudiante02.getGrades01() > notaMaxima02) {
+            notaMaxima02 = estudiante02.getGrades01();
+        }
+        if (estudiante02.getGrades02() > notaMaxima02) {
+            notaMaxima02 = estudiante02.getGrades02();
+        }
+        if (estudiante02.getGrades03() > notaMaxima02) {
+            notaMaxima02 = estudiante01.getGrades03();
+        }
+        System.out.println("La nota máxima de María es: "+notaMaxima02);
+        if (estudiante03.getGrades01() > notaMaxima03) {
+            notaMaxima03 = estudiante01.getGrades01();
+        }
+        if (estudiante03.getGrades02() > notaMaxima03) {
+            notaMaxima03 = estudiante01.getGrades02();
+        }
+        if (estudiante03.getGrades03() > notaMaxima03) {
+            notaMaxima03 = estudiante01.getGrades03();
+        }
+        System.out.println("La nota máxima de Pepe es: "+notaMaxima03);
+    }
 }
