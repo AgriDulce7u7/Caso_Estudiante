@@ -41,6 +41,8 @@ public class Main {
         calcularPromedioEdad(estudiante01, estudiante02, estudiante03);
         // Calcular promedio de la nota 1 de los tres estudiantes
         calcularPromedioNota1(estudiante01, estudiante02, estudiante03);
+        // Obtener las notas mayores o iguales a 4
+        obtenerEstudianteNotasMayor4(estudiante01, estudiante02, estudiante03);
     }
 
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
@@ -149,5 +151,24 @@ public class Main {
         double perdieron = (calcularEstudiantesReprobados * 100) / 3;
         System.out.println("El porcentaje de estudiantes que reprobaron es: " + perdieron+"%");
     }
-
+    private static void obtenerEstudianteNotasMayor4(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
+        String nombre01 = "José";
+        if (estudiante01.getGrades01() >= 4 && estudiante01.getGrades02() >= 4 && estudiante01.getGrades03() >= 4){
+            System.out.print("El estudiante "+nombre01+" tiene todasd las notas mayores a cero.");
+        }else{
+            System.out.println("Todas las notas de "+nombre01+" no son mayores o iguales a cuatro.");
+        }
+        String nombre02 = "María";
+        if (estudiante02.getGrades01() >= 4 && estudiante02.getGrades02() >= 4 && estudiante02.getGrades03() >= 4){
+            System.out.print("El estudiante "+nombre02+" tiene todasd las notas mayores a cero.");
+        }else{
+            System.out.println("Todas las notas de "+nombre02+" no son mayores o iguales a cuatro.");
+        }
+        String nombre03 = "Pepe";
+        if (estudiante03.getGrades01() >= 4 && estudiante03.getGrades02() >= 4 && estudiante03.getGrades03() >= 4){
+            System.out.print("El estudiante "+nombre03+" tiene todasd las notas mayores a cero.");
+        }else{
+            System.out.println("Todas las notas de "+nombre03+" no son mayores o iguales a cuatro.");
+        }
+    }
 }
