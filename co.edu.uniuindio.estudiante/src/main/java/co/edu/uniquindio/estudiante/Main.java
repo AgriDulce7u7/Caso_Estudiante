@@ -56,6 +56,9 @@ public class Main {
         // Calcular la nota más alta
         double notaMasAlta = calcularNotaMayorDelCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
         System.out.println("La definitiva más alta del curso es: " + notaMasAlta);
+        // Calcular la nota más baja
+        double notaMasBaja = calcularNotaMenorCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
+        System.out.println("La definitiva más baja del curso es: " + notaMasBaja);
     }
     public static void calcularPromedioCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
@@ -82,5 +85,19 @@ public class Main {
             maxDefinitiva = definitivaEstudiante03;
         }
         return maxDefinitiva;
+    }
+    public static double calcularNotaMenorCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+        double minDefinitiva = 0.0;
+
+        if (definitivaEstudiante01 >= minDefinitiva) {
+            minDefinitiva = definitivaEstudiante01;
+        }
+        if (definitivaEstudiante02 <= minDefinitiva) {
+            minDefinitiva = definitivaEstudiante02;
+        }
+        if (definitivaEstudiante03 <= minDefinitiva) {
+            minDefinitiva = definitivaEstudiante03;
+        }
+        return minDefinitiva;
     }
 }
