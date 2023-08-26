@@ -38,7 +38,8 @@ public class Main {
         calcularDefinitivaEstudiante(estudiante01, estudiante02, estudiante03);
         // Calcular el promedio de edades
         calcularPromedioEdad(estudiante01, estudiante02, estudiante03);
-
+        // Calcular promedio de la nota 1 de los tres estudiantes
+        calcularPromedioNota1(estudiante01, estudiante02, estudiante03);
     }
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         double definitivaEstudiante01 = (estudiante01.getGrades01() + estudiante01.getGrades02() + estudiante01.getGrades03()) / 3;
@@ -60,5 +61,9 @@ public class Main {
     private static void calcularPromedioEdad(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
         int promedioEdad = (estudiante01.getAge() + estudiante02.getAge() + estudiante03.getAge()) / 3;
         System.out.println("El promedio de edad del curso es de: "+promedioEdad);
+    }
+    private static void calcularPromedioNota1(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
+        double promedioNotaUno = (estudiante01.getGrades01() + estudiante02.getGrades01() + estudiante03.getGrades01()) / 3;
+        System.out.println("El promedio de la primer nota del curso es de: "+promedioNotaUno);
     }
 }
