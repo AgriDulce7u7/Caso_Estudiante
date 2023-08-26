@@ -51,8 +51,11 @@ public class Main {
         double definitivaEstudiante03 = (estudiante03.getGrades01() + estudiante03.getGrades02() + estudiante03.getGrades03()) / 3;
         System.out.println("El promedio del estudiante Pepe es: " + definitivaEstudiante03);
 
-        //Calcular el promedio del curso
+        // Calcular el promedio del curso
         calcularPromedioCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
+        // Calcular la nota más alta
+        double notaMasAlta = calcularNotaMayorDelCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
+        System.out.println("La definitiva más alta del curso es: " + notaMasAlta);
     }
     public static void calcularPromedioCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
         double promedioCurso = (definitivaEstudiante01 + definitivaEstudiante02 + definitivaEstudiante03) / 3;
@@ -65,5 +68,19 @@ public class Main {
     private static void calcularPromedioNota1(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
         double promedioNotaUno = (estudiante01.getGrades01() + estudiante02.getGrades01() + estudiante03.getGrades01()) / 3;
         System.out.println("El promedio de la primer nota del curso es de: "+promedioNotaUno);
+    }
+    public static double calcularNotaMayorDelCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+        double maxDefinitiva = 0.0;
+
+        if (definitivaEstudiante01 > maxDefinitiva) {
+                maxDefinitiva = definitivaEstudiante01;
+        }
+        if (definitivaEstudiante02 > maxDefinitiva) {
+            maxDefinitiva = definitivaEstudiante02;
+        }
+        if (definitivaEstudiante03 > maxDefinitiva) {
+            maxDefinitiva = definitivaEstudiante03;
+        }
+        return maxDefinitiva;
     }
 }
