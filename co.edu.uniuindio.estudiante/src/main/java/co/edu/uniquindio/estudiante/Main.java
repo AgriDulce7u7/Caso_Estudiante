@@ -43,6 +43,12 @@ public class Main {
         calcularPromedioNota1(estudiante01, estudiante02, estudiante03);
         // Obtener las notas mayores o iguales a 4
         obtenerEstudianteNotasMayor4(estudiante01, estudiante02, estudiante03);
+        // Calcular la nota más alta
+        double notaMasAlta = calcularNotaMayorDelCurso(estudiante01, estudiante02, estudiante03);
+        System.out.println("La nota más alta del curso es: " + notaMasAlta);
+        // Calcular la nota más baja
+        double notaMasBaja = calcularNotaMenorCurso(estudiante01, estudiante02, estudiante03);
+        System.out.println("La nota más baja del curso es: " + notaMasBaja);
     }
 
     public static void calcularDefinitivaEstudiante(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
@@ -57,12 +63,6 @@ public class Main {
 
         // Calcular el promedio del curso
         calcularPromedioCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
-        // Calcular la nota más alta
-        double notaMasAlta = calcularNotaMayorDelCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
-        System.out.println("La definitiva más alta del curso es: " + notaMasAlta);
-        // Calcular la nota más baja
-        double notaMasBaja = calcularNotaMenorCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
-        System.out.println("La definitiva más baja del curso es: " + notaMasBaja);
         // Determinar  si el estudiante gana o no el curso
         aprobacionCurso(definitivaEstudiante01, definitivaEstudiante02, definitivaEstudiante03);
     }
@@ -82,32 +82,68 @@ public class Main {
         System.out.println("El promedio de la primer nota del curso es de: " + promedioNotaUno);
     }
 
-    public static double calcularNotaMayorDelCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+    public static double calcularNotaMayorDelCurso(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         double maxDefinitiva = 0.0;
 
-        if (definitivaEstudiante01 > maxDefinitiva) {
-            maxDefinitiva = definitivaEstudiante01;
+        if (estudiante01.getGrades01() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades01();
         }
-        if (definitivaEstudiante02 > maxDefinitiva) {
-            maxDefinitiva = definitivaEstudiante02;
+        if (estudiante01.getGrades02() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades02();
         }
-        if (definitivaEstudiante03 > maxDefinitiva) {
-            maxDefinitiva = definitivaEstudiante03;
+        if (estudiante01.getGrades03() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades03();
+        }
+        if (estudiante02.getGrades01() > maxDefinitiva) {
+            maxDefinitiva = estudiante02.getGrades01();
+        }
+        if (estudiante02.getGrades02() > maxDefinitiva) {
+            maxDefinitiva = estudiante02.getGrades02();
+        }
+        if (estudiante02.getGrades03() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades03();
+        }
+        if (estudiante03.getGrades01() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades01();
+        }
+        if (estudiante03.getGrades02() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades02();
+        }
+        if (estudiante03.getGrades03() > maxDefinitiva) {
+            maxDefinitiva = estudiante01.getGrades03();
         }
         return maxDefinitiva;
     }
 
-    public static double calcularNotaMenorCurso(double definitivaEstudiante01, double definitivaEstudiante02, double definitivaEstudiante03) {
+    public static double calcularNotaMenorCurso(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03) {
         double minDefinitiva = 0.0;
 
-        if (definitivaEstudiante01 >= minDefinitiva) {
-            minDefinitiva = definitivaEstudiante01;
+        if (estudiante01.getGrades01() >= minDefinitiva) {
+            minDefinitiva = estudiante01.getGrades01();
         }
-        if (definitivaEstudiante02 <= minDefinitiva) {
-            minDefinitiva = definitivaEstudiante02;
+        if (estudiante01.getGrades02() <= minDefinitiva) {
+            minDefinitiva = estudiante01.getGrades02();
         }
-        if (definitivaEstudiante03 <= minDefinitiva) {
-            minDefinitiva = definitivaEstudiante03;
+        if (estudiante01.getGrades03() <= minDefinitiva) {
+            minDefinitiva = estudiante01.getGrades03();
+        }
+        if (estudiante02.getGrades01() <= minDefinitiva) {
+            minDefinitiva = estudiante02.getGrades01();
+        }
+        if (estudiante02.getGrades02() <= minDefinitiva) {
+            minDefinitiva = estudiante02.getGrades02();
+        }
+        if (estudiante02.getGrades03() <= minDefinitiva) {
+            minDefinitiva = estudiante02.getGrades03();
+        }
+        if (estudiante03.getGrades01() <= minDefinitiva) {
+            minDefinitiva = estudiante03.getGrades01();
+        }
+        if (estudiante03.getGrades02() <= minDefinitiva) {
+            minDefinitiva = estudiante03.getGrades02();
+        }
+        if (estudiante03.getGrades03() <= minDefinitiva) {
+            minDefinitiva = estudiante03.getGrades03();
         }
         return minDefinitiva;
     }
@@ -151,6 +187,7 @@ public class Main {
         double perdieron = (calcularEstudiantesReprobados * 100) / 3;
         System.out.println("El porcentaje de estudiantes que reprobaron es: " + perdieron+"%");
     }
+
     private static void obtenerEstudianteNotasMayor4(Estudiante estudiante01, Estudiante estudiante02, Estudiante estudiante03){
         String nombre01 = "José";
         if (estudiante01.getGrades01() >= 4 && estudiante01.getGrades02() >= 4 && estudiante01.getGrades03() >= 4){
@@ -171,4 +208,6 @@ public class Main {
             System.out.println("Todas las notas de "+nombre03+" no son mayores o iguales a cuatro.");
         }
     }
+
+
 }
